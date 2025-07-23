@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saved Predictions</title>
+</head>
+<body>
+    <h2>Stored Predictions</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Volume</th>
+            <th>Close_1</th>
+            <th>High_Low_Spread</th>
+            <th>Return</th>
+            <th>SMA_5</th>
+            <th>SMA_10</th>
+            <th>Predicted Price</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
