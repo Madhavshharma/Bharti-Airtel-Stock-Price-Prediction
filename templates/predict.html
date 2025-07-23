@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            padding: 40px;
+            background-image:url("/static/checking-price-chart-on-digital-exchange-forex-trading-agency-worker-agent-reviewing-profits-growth-another-crisis-is-coming-and-prices-on-the-charts-are-falli.jpg")
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-image:url("/static/abstract-financial-chart-moving-growing-260nw-2424709343.webp")
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Stock Price Prediction of Bharti Airtel</h2>
+        <form action="/predict" method="POST">
+            <label>Open:</label>
+            <input type="text" name="Open" required>
+
+            <label>High:</label>
+            <input type="text" name="High" required>
+
+            <label>Low:</label>
+            <input type="text" name="Low" required>
+
+            <label>Volume:</label>
+            <input type="text" name="Volume" required>
+
+            <label>Close_1:</label>
+            <input type="text" name="Close_1" required>
+
+            <label>High_Low_Spread:</label>
+            <input type="text" name="High_Low_Spread" required>
+
+            <label>Return:</label>
+            <input type="text" name="Return" required>
+
+            <label>SMA_5:</label>
+            <input type="text" name="SMA_5" required>
+
+            <label>SMA_10:</label>
+            <input type="text" name="SMA_10" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+        <h3 style="text-align:center; margin-top:20px;">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
